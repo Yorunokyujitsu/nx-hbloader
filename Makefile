@@ -44,11 +44,12 @@ DATA		:=	data
 INCLUDES	:=	include
 #ROMFS	:=	romfs
 
-VERSION_TXT := $(shell cat ../../../version 2>/dev/null | cut -d '|' -f 2 | tr -d ' ')
 APP_VERSION	:=	2.4.4
+BUILD_DATE := $(shell date +%m%d)
+#VERSION_TXT := $(shell cat ../../../version 2>/dev/null | cut -d '|' -f 2 | tr -d ' ')
 
 ifeq ($(RELEASE),)
-	APP_VERSION	:=	$(APP_VERSION)-$(VERSION_TXT)
+	APP_VERSION	:=	$(APP_VERSION)-$(BUILD_DATE)
 endif
 
 #---------------------------------------------------------------------------------
