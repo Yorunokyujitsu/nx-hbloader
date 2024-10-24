@@ -44,9 +44,10 @@ DATA		:=	data
 INCLUDES	:=	include
 #ROMFS	:=	romfs
 APP_VERSION	:=	2.4.4
+BUILD_DATE := $(shell date +%m%d)
 
 ifeq ($(RELEASE),)
-	APP_VERSION	:=	$(APP_VERSION)-$(shell git describe --dirty --always)
+	APP_VERSION	:=	$(APP_VERSION)-$(BUILD_DATE)
 endif
 
 #---------------------------------------------------------------------------------
